@@ -11,5 +11,5 @@ describe('login-form App', () => {
     page.navigateTo();
     expect(page.getTitle()).toEqual('end-end-testing');
   });
-  
+
 });

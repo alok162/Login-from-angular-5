@@ -7,10 +7,13 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './user.service';
+import { AuthguardGuard } from './authguard.guard';
 
 const appRoutes:Routes = [
  {
  path:'dashboard',
+ canActivate:[AuthguardGuard],
  component:DashboardComponent
  },
  {
@@ -32,7 +35,7 @@ const appRoutes:Routes = [
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserService, AuthguardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

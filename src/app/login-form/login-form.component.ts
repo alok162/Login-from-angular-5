@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login-form',
@@ -7,9 +8,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
-
-  constructor(private router:Router) { }
-
+  str: string;
+  constructor(private router:Router, private user:UserService) { }
+ 
   ngOnInit() {
   }
   loginUser(e){
@@ -17,7 +18,11 @@ export class LoginFormComponent implements OnInit {
     var username = e.target.elements[0].value;
     var password = e.target.elements[1].value;
     if(username=='alok' && password=='password') {
+      this.user.setUserLoggedIn();
        this.router.navigate(['dashboard'])
+    }
+    else{
+      this.str='Authentication Failed';
     }
   }
 

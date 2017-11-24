@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import{ UserService } from '../user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,11 +16,15 @@ export class DashboardComponent {
   found:boolean;
   
 
-  constructor(private httpClient:HttpClient){  }
+  constructor(private httpClient:HttpClient, private user:UserService){  }
 
   onNameKeyUp(event:any){
     this.name = event.target.value;
     this.found = false;
+  }
+
+  logOut() {
+    this.user.setFalseUserLoggedIn();
   }
 
   getProfile(){

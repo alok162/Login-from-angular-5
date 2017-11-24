@@ -3,7 +3,7 @@
 <form (submit)="loginUser($event)">
 
   <div class="container">
-  <h2>Login Form</h2><br>
+  <h1>Login Form</h1><br>
     <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -12,6 +12,7 @@
         
     <button type="submit">Login</button>
     <input type="checkbox" checked="checked"> Remember me
+    <p style="color:red">{{str}}</p>
   </div>
 
 </form>
