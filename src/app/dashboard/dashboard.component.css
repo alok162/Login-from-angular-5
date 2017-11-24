@@ -1,0 +1,21 @@
+.container {
+	padding-left: 1050px;
+	padding-top:8px;
+}
+
+ol{
+	padding-left:30px;
+}
+ol li {
+    padding: 20px;
+    padding-left:50px;
+}
+
+span {
+	font-size: 20px;
+}
+
+body {
+
+ background-color:rgb(5,500,0);
+}
